@@ -1,0 +1,15 @@
+<%= simple_form_for(@meeting) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :subject %>
+    <%= f.input :date %>
+    <%= f.input :start_time %>
+    <%= f.input :end_time %>
+    <%= f.input :details %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
