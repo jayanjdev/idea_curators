@@ -1,4 +1,4 @@
-class LeadsController < ApplicationController
+class LeadsController < AuthenticatedController
   before_action :set_lead, only: [:show, :edit, :update, :destroy]
 
   # GET /leads

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @initiative.subject %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @initiative.tags %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @initiative.source %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @initiative.user_id %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @initiative.details %>
+</p>
+
+<%= link_to 'Edit', edit_initiative_path(@initiative) %> |
+<%= link_to 'Back', initiatives_path %>

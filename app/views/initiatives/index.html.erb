@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Initiatives</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Subject</th>
+      <th>Tags</th>
+      <th>Source</th>
+      <th>User</th>
+      <th>Details</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @initiatives.each do |initiative| %>
+      <tr>
+        <td><%= initiative.subject %></td>
+        <td><%= initiative.tags %></td>
+        <td><%= initiative.source %></td>
+        <td><%= initiative.user_id %></td>
+        <td><%= initiative.details %></td>
+        <td><%= link_to 'Show', initiative %></td>
+        <td><%= link_to 'Edit', edit_initiative_path(initiative) %></td>
+        <td><%= link_to 'Destroy', initiative, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Initiative', new_initiative_path %>
