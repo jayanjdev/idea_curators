@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:jayanjdev/simple_form.git
+  remote: git://github.com/jayanjdev/simple_form.git
   revision: 7cb9d0252a8473e2e867e996b6194bf9c24f4ce1
   branch: master
   specs:
