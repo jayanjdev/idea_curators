@@ -7,17 +7,17 @@
 
 <p>
   <strong>Date:</strong>
-  <%= @meeting.date %>
+  <%= @meeting.date.strftime("%m-%d-%Y") %>
 </p>
 
 <p>
   <strong>Start time:</strong>
-  <%= @meeting.start_time %>
+  <%= @meeting.start_time.strftime("%H:%M") %>
 </p>
 
 <p>
   <strong>End time:</strong>
-  <%= @meeting.end_time %>
+  <%= @meeting.end_time.strftime("%H:%M") %>
 </p>
 
 <p>
