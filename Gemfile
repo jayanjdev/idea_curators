@@ -15,7 +15,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'high_voltage'
 gem 'pg'
-gem 'simple_form'
+gem 'simple_form', git: "git@github.com:plataformatec/simple_form.git", branch: :master
 gem 'thin'
 group :development do
   gem 'better_errors'
