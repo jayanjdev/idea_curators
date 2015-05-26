@@ -18,6 +18,7 @@ gem 'pg'
 gem 'simple_form', git: "git@github.com:plataformatec/simple_form.git", branch: :master
 gem 'thin'
 group :development do
+  gem 'quiet_assets'
   gem 'better_errors'
   gem 'guard-bundler'
   gem 'guard-rails'
