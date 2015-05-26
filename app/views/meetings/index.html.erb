@@ -2,29 +2,34 @@
 
 <h1>Listing Meetings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Subject</th>
-      <th>Date</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th>Details</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
+<table  class='table-striped'>
   <tbody>
     <% @meetings.each do |meeting| %>
       <tr>
-        <td><%= meeting.subject %></td>
-        <td><%= meeting.date %></td>
-        <td><%= meeting.start_time %></td>
-        <td><%= meeting.end_time %></td>
-        <td><%= meeting.details %></td>
-        <td><%= link_to 'Show', meeting %></td>
-        <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
-        <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <p>
+          <strong>Subject:</strong>
+          <%= meeting.subject %>
+        </p>
+
+        <p>
+          <strong>Date:</strong>
+          <%= meeting.date %>
+        </p>
+
+        <p>
+          <strong>Start time:</strong>
+          <%= meeting.start_time %>
+        </p>
+
+        <p>
+          <strong>End time:</strong>
+          <%= meeting.end_time %>
+        </p>
+
+        <p>
+          <strong>Details:</strong>
+          <%= meeting.details %>
+        </p>
       </tr>
     <% end %>
   </tbody>
