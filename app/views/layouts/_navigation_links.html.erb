@@ -1,4 +1,7 @@
 <%# add navigation links to this file %>
+<% if user_signed_in? %>
+<li><%= link_to 'Meetings', meetings_path %></li>
+<% end %>
 <li><%= link_to 'About', page_path('about') %></li>
 <% if user_signed_in? %>
   <li><%= link_to 'Edit account', edit_user_registration_path %></li>

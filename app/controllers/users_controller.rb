@@ -1,5 +1,4 @@
-class UsersController < ApplicationController
-  before_action :authenticate_user!
+class UsersController < AuthenticatedController
   before_action :admin_only, :except => :show
 
   def index
