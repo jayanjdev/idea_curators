@@ -1,5 +1,18 @@
-<h3> A web application to manage leads and initiatives </h3>
-<% unless user_signed_in? %>
+<% if user_signed_in? %>
+  <h3> BonFire - A web application to explore and build on ideas with people you know works for you. </h3>
+  <div>
+    <h2> A brief Oject of this application(BonFire) </h2>
+    <p> My biggest whatsapp group or to say any group I am assoicate at a personal level is my kintergraden classmates. In this hyper connected world, while we make less new friendships that last, we are able to keep our existing connections nutured and rewarding. 
+    </p<
+    <p>
+      These connections/friendships are more often less conficting than the friends that we make at work and or other social circles. I believe these connection can become more rewarding if it can find forums where they can find things to do together, not just for fun , but also for profit. The factors that would enable such a possiblity is trust, deep understanding of the other personality patterns like ego, tantrums, weakness etc.  
+    </p>
+    <p>
+      A forum of that sort, can help one to get mentoring, peer reiviews, leads for new ventures jobs etc. This application, is an initiative to be bring together people in my cirle. This application is open source rails application. But this application is going to a private web service and is not open to the public in any form.
+    </p>
+    <p>Jayan </p>
+  </div>
+<% else %>
 <p> Please login or signup </p>
 <% end %>
 
