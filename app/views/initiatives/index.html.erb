@@ -13,7 +13,7 @@
       <li> <strong>Details:</strong> <%= initiative.details %> </li>
       <span> 
       <%= link_to 'Show', initiative_path(initiative) %> 
-      <% if current_user == lead.user  %>
+      <% if current_user == initiative.user  %>
         <%= link_to 'Edit', edit_initiative_path(initiative) %> 
         <%= link_to 'Destroy', initiative, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>

@@ -25,7 +25,19 @@
   <%= @initiative.details %>
 </p>
 
-<% if current_user == lead.user  %>
-<%= link_to 'Edit', edit_initiative_path(@initiative) %> |
+<% if current_user == @initiative.user  %>
+  <%= link_to 'Edit', edit_initiative_path(@initiative) %> |
 <% end %>
 <%= link_to 'Back', initiatives_path %>
+
+<ul class='c-comments-list'>
+  <% @initiative.comments.each do |comment| %>
+    <%= render :partial => 'partial/comment', locals: { comment: comment } %>
+  <% end %>
+</ul>
+
+<div class='js-add-a-comment'>
+  <div class-'js-new-comment'>
+  </div>
+</div>
+
