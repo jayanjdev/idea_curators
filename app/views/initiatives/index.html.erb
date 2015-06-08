@@ -12,8 +12,11 @@
       <li> <strong> Owner </strong> <%= initiative.user.name %> </li>
       <li> <strong>Details:</strong> <%= initiative.details %> </li>
       <span> 
-      <%= link_to 'Edit', edit_initiative_path(initiative) %> 
-      <%= link_to 'Destroy', initiative, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Show', initiative_path(initiative) %> 
+      <% if current_user == lead.user  %>
+        <%= link_to 'Edit', edit_initiative_path(initiative) %> 
+        <%= link_to 'Destroy', initiative, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </span>
     </tr>
     <% end %>

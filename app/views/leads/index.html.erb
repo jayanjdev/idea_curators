@@ -12,8 +12,11 @@
       <li> <strong> Owner </strong> <%= lead.user.name %> </li>
       <li> <strong>Details:</strong> <%= lead.details %> </li>
       <span> 
-      <%= link_to 'Edit', edit_lead_path(lead) %> 
-      <%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Show', lead_path(lead) %> 
+      <% if current_user == lead.user  %>
+        <%= link_to 'Edit', edit_lead_path(lead) %> 
+        <%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </span>
     </tr>
     <% end %>
