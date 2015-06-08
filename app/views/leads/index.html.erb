@@ -2,34 +2,21 @@
 
 <h1>Listing Leads</h1>
 
-<table>
-  <thead>
+<table class='table  table-bordered table-striped'>
+  <% @leads.each do |lead| %>
     <tr>
-      <th>Subject</th>
-      <th>Tags</th>
-      <th>Source</th>
-      <th>User</th>
-      <th>Details</th>
-      <th colspan="3"></th>
+    <td>
+      <li> <strong>Subject:</strong> <%= lead.subject %> </li>
+      <li> <strong>Tags</strong> <%= lead.tags %> </li>
+      <li> <strong>Source </strong> <%= lead.source%> </li>
+      <li> <strong> Owner </strong> <%= lead.user.name %> </li>
+      <li> <strong>Details:</strong> <%= lead.details %> </li>
+      <span> 
+      <%= link_to 'Edit', edit_lead_path(lead) %> 
+      <%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </span>
     </tr>
-  </thead>
-
-  <tbody>
-    <% @leads.each do |lead| %>
-      <tr>
-        <td><%= lead.subject %></td>
-        <td><%= lead.tags %></td>
-        <td><%= lead.source %></td>
-        <td><%= lead.user_id %></td>
-        <td><%= lead.details %></td>
-        <td><%= link_to 'Show', lead %></td>
-        <td><%= link_to 'Edit', edit_lead_path(lead) %></td>
-        <td><%= link_to 'Destroy', lead, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
     <% end %>
-  </tbody>
 </table>
+<%= link_to 'New lead', new_lead_path %>
 
-<br>
-
-<%= link_to 'New Lead', new_lead_path %>

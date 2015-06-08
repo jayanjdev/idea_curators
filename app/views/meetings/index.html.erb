@@ -10,7 +10,7 @@
       <li> <strong>Date:</strong> <%= meeting.date.strftime("%m-%d-%Y") %> </li>
       <li> <strong>Start time:</strong> <%= meeting.start_time.strftime("%H:%M") %> </li>
       <li> <strong>End time:</strong> <%= meeting.end_time.strftime("%H:%M") %> </li> 
-      <li> <strong>Details:</strong> <%= meeting.details %> </li>
+      <span> <strong>Details:</strong> <%= meeting.details %> </span>
     </td>
     </tr>
     <% end %>
