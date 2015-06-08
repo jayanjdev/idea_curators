@@ -67,10 +67,6 @@ class InitiativesController < AuthenticatedController
       @initiative = Initiative.find(params[:id])
     end
 
-    def set_comments_presenter
-      @comments_presenter = CommentsPresenter.new(@initiative)
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def initiative_params
       params.require(:initiative).permit(:subject, :tags, :source, :user_id, :details)

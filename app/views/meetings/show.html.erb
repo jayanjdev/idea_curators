@@ -27,3 +27,17 @@
 
 <%= link_to 'Edit', edit_meeting_path(@meeting) %> |
 <%= link_to 'Back', meetings_path %>
+
+<ul class='c-comments-list'>
+  <% @meeting.comments.each do |comment| %>
+    <%= render :partial => 'partial/comment', locals: { comment: comment } %>
+  <% end %>
+</ul>
+
+<div class='js-add-a-comment'>
+  <div class-'js-new-comment'>
+  </div>
+</div>
+
+<%= link_to 'Add a comment', new_comment_path(commentable_type: @meeting.class.to_s,
+commentable_id: @meeting.id) %>
