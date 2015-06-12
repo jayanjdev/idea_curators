@@ -1,6 +1,6 @@
   <li class='c-comment'>
   <span 'c-user-icon'>
-    <%=  comment.user_name %>
+    <%= link_to comment.user_name, profile_path(comment.user)%>
   </span>
   <span 'c-comment-message'>
     <%=  comment.message%>
