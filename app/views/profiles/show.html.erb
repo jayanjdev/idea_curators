@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<div class='row'>
-  <%= link_to 'Edit', edit_profile_path(@profile) %>
-</div>
+<% if current_user.id == @profile.user_id  %>
+  <div class='row'>
+    <%= link_to 'Edit', edit_profile_path(@profile) %>
+  </div>
+<% end %>
 
 <p>
   <strong>Nickname:</strong>
