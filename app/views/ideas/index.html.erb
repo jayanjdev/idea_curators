@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing ideas</h1>
+
+<table class='table  table-bordered table-striped'>
+  <% @ideas.each do |idea| %>
+    <tr>
+    <td>
+      <li> <strong>Subject:</strong> <%= idea.subject %> </li>
+      <li> <strong>Tags</strong> <%= idea.tags %> </li>
+      <li> <strong>Source </strong> <%= idea.source%> </li>
+      <li> <strong> Owner </strong> 
+        <%= link_to idea.user.name, profile_path(idea.user)%>
+      </li>
+      <li> <strong>Details:</strong> <%= idea.details %> </li>
+      <span> 
+      <%= link_to 'Show', idea_path(idea) %> 
+      <% if current_user == idea.user  %>
+        <%= link_to 'Edit', edit_idea_path(idea) %> 
+        <%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </span>
+    </tr>
+    <% end %>
+</table>
+<%= link_to 'New idea', new_idea_path %>
+

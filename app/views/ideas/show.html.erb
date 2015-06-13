@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @idea.subject %>
+</p>
+
+<p>
+  <strong>Tags:</strong>
+  <%= @idea.tags %>
+</p>
+
+<p>
+  <strong>Source:</strong>
+  <%= @idea.source %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= link_to @idea.user.name, profile_path(@idea.user)%>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @idea.details %>
+</p>
+
+<% if current_user == @idea.user %>
+  <%= link_to 'Edit', edit_idea_path(@idea) %> |
+<% end %>
+<%= link_to 'Back', ideas_path %>
+
+<ul class='c-comments-list'>
+  <% @idea.comments.each do |comment| %>
+    <%= render :partial => 'partial/comment', locals: { comment: comment } %>
+  <% end %>
+</ul>
+
+<div class='js-add-a-comment'>
+  <div class-'js-new-comment'>
+  </div>
+</div>
+
+<%= link_to 'Add a comment', new_comment_path(commentable_type: @idea.class.to_s,
+commentable_id: @idea.id) %>
