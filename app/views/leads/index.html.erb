@@ -9,7 +9,9 @@
       <li> <strong>Subject:</strong> <%= lead.subject %> </li>
       <li> <strong>Tags</strong> <%= lead.tags %> </li>
       <li> <strong>Source </strong> <%= lead.source%> </li>
-      <li> <strong> Owner </strong> <%= lead.user.name %> </li>
+      <li> <strong> Owner </strong> 
+      <%= link_to lead.user.name, profile_path(lead.user)%>
+      </li>
       <li> <strong>Details:</strong> <%= lead.details %> </li>
       <span> 
       <%= link_to 'Show', lead_path(lead) %> 

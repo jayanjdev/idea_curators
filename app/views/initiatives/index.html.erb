@@ -9,7 +9,9 @@
       <li> <strong>Subject:</strong> <%= initiative.subject %> </li>
       <li> <strong>Tags</strong> <%= initiative.tags %> </li>
       <li> <strong>Source </strong> <%= initiative.source%> </li>
-      <li> <strong> Owner </strong> <%= initiative.user.name %> </li>
+      <li> <strong> Owner </strong> 
+        <%= link_to initiative.user.name, profile_path(initiative.user)%>
+      </li>
       <li> <strong>Details:</strong> <%= initiative.details %> </li>
       <span> 
       <%= link_to 'Show', initiative_path(initiative) %> 

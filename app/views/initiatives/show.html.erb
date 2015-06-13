@@ -17,7 +17,7 @@
 
 <p>
   <strong>Owner:</strong>
-  <%= @initiative.user.name%>
+  <%= link_to @initiative.user.name, profile_path(@initiative.user)%>
 </p>
 
 <p>
@@ -25,7 +25,7 @@
   <%= @initiative.details %>
 </p>
 
-<% if current_user == @initiative.user  %>
+<% if current_user == @initiative.user %>
   <%= link_to 'Edit', edit_initiative_path(@initiative) %> |
 <% end %>
 <%= link_to 'Back', initiatives_path %>

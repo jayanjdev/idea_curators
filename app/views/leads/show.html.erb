@@ -16,9 +16,10 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @lead.user_id %>
+  <strong>Owner:</strong>
+  <%= link_to @lead.user.name, profile_path(@lead.user)%>
 </p>
+
 
 <p>
   <strong>Details:</strong>
