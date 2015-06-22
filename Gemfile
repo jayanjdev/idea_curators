@@ -12,6 +12,7 @@ group :development, :test do
   gem 'spring'
 end
 gem 'bootstrap-sass'
+gem 'ckeditor'
 gem 'devise'
 gem 'high_voltage'
 gem 'pg'
