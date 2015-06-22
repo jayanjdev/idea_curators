@@ -12,7 +12,7 @@
       <li> <strong> Owner </strong> 
         <%= link_to initiative.user.name, profile_path(initiative.user)%>
       </li>
-      <li> <strong>Details:</strong> <%= initiative.details %> </li>
+      <li> <strong>Details:</strong> <%= raw initiative.details %> </li>
       <span> 
       <%= link_to 'Show', initiative_path(initiative) %> 
       <% if current_user == initiative.user  %>

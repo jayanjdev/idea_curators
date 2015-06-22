@@ -12,7 +12,7 @@
       <li> <strong> Owner </strong> 
         <%= link_to idea.user.name, profile_path(idea.user)%>
       </li>
-      <li> <strong>Details:</strong> <%= idea.details %> </li>
+      <li> <strong>Details:</strong> <%= raw idea.details %> </li>
       <span> 
       <%= link_to 'Show', idea_path(idea) %> 
       <% if current_user == idea.user  %>

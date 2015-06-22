@@ -12,7 +12,7 @@
       <li> <strong> Owner </strong> 
       <%= link_to lead.user.name, profile_path(lead.user)%>
       </li>
-      <li> <strong>Details:</strong> <%= lead.details %> </li>
+      <li> <strong>Details:</strong> <%= raw lead.details %> </li>
       <span> 
       <%= link_to 'Show', lead_path(lead) %> 
       <% if current_user == lead.user  %>
