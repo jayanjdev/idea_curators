@@ -1,6 +1,130 @@
 <% if user_signed_in? %>
-  Dashboard
+  <div class='c-dashboard row-fluid'>
+    <div class="panel panel-default col-md-4">
+      <div class="panel-heading">lead</div>
+      <div class="panel-body"> 
+        <% if @presenter.leads.any? %> 
+          <% if @presenter.new_leads.any? %> 
+            <div class="panel panel-default col-md-12">
+              <div class="panel-heading">New</div>
+              <div class="panel-body"> 
+                <ul>
+                  <% @presenter.new_leads.each do |lead| %>
+                    <li class='c-list-lineitem'> 
+                    <span class=c-subject'>
+                      <%= link_to "#{lead.subject}", lead_path(lead) %>
+                    </span>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if @presenter.updated_leads.any? %> 
+            <div class="panel panel-default col-md-12">
+              <div class="panel-heading">New</div>
+              <div class="panel-body"> 
+                <ul>
+                  <% @presenter.updated_leads.each do |lead| %>
+                    <li class='c-list-lineitem'> 
+                    <span class=c-subject'>
+                      <%= link_to "#{lead.subject}", lead_path(lead) %>
+                    </span>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <span> No leads in the last week </span>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default col-md-4">
+      <div class="panel-heading">Idea</div>
+      <div class="panel-body"> 
+        <% if @presenter.ideas.any? %> 
+          <% if @presenter.new_ideas.any? %> 
+            <div class="panel panel-default col-md-12">
+              <div class="panel-heading">New</div>
+              <div class="panel-body"> 
+                <ul>
+                  <% @presenter.new_ideas.each do |idea| %>
+                    <li class='c-list-lineitem'> 
+                    <span class=c-subject'>
+                      <%= link_to "#{idea.subject}", idea_path(idea) %>
+                    </span>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if @presenter.updated_ideas.any? %> 
+            <div class="panel panel-default col-md-12">
+              <div class="panel-heading">New</div>
+              <div class="panel-body"> 
+                <ul>
+                  <% @presenter.updated_ideas.each do |idea| %>
+                    <li class='c-list-lineitem'> 
+                    <span class=c-subject'>
+                      <%= link_to "#{idea.subject}", idea_path(idea) %>
+                    </span>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <span> No ideas in the last week </span>
+        <% end %>
+      </div>
+    </div>
+    <div class="panel panel-default col-md-4">
+      <div class="panel-heading">Initaitive</div>
+      <div class="panel-body"> 
+        <% if @presenter.initiatives.any? %> 
+          <% if @presenter.new_initiatives.any? %> 
+            <div class="panel panel-default col-md-12">
+              <div class="panel-heading">New</div>
+              <div class="panel-body"> 
+                <ul>
+                  <% @presenter.new_initiatives.each do |initiative| %>
+                    <li class='c-list-lineitem'> 
+                    <span class=c-subject'>
+                      <%= link_to "#{initiative.subject}", initiative_path(initiative) %>
+                    </span>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+          <% if @presenter.updated_initiatives.any? %> 
+            <div class="panel panel-default col-md-12">
+              <div class="panel-heading">New</div>
+              <div class="panel-body"> 
+                <ul>
+                  <% @presenter.updated_initiatives.each do |initiative| %>
+                    <li class='c-list-lineitem'> 
+                    <span class=c-subject'>
+                      <%= link_to "#{initiative.subject}", initiative_path(initiative) %>
+                    </span>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <span> No initiatives in the last week </span>
+        <% end %>
+      </div>
+    </div>
+  </div>
 <% else %>
-<p> Please login or signup </p>
+  <p> Please login or signup </p>
 <% end %>
 
